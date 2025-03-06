@@ -50,4 +50,3 @@ jobs:
           password: ${{ secrets.SFTP_PASSWORD }}
           script: |
             mv /kunden/homepages/35/d992320858/htdocs/fitko-toolkit/dist/fitko-toolkit/browser/* /kunden/homepages/35/d992320858/htdocs/fitko-toolkit/
-            rmdir /kunden/homepages/35/d992320858/htdocs/fitko-toolkit/dist
