@@ -35,7 +35,7 @@ jobs:
 
       - name: List directories with real paths
         run: |
-          sshpass -p "${{ secrets.SFTP_PASSWORD }}" ssh -o StrictHostKeyChecking=no ${{ secrets.SFTP_USERNAME }}@${{ secrets.SFTP_HOST }} "realpath /path/to/directory/*"
+          sshpass -p "${{ secrets.SFTP_PASSWORD }}" ssh -o StrictHostKeyChecking=no ${{ secrets.SFTP_USERNAME }}@${{ secrets.SFTP_HOST }} "realpath /fitko-toolkit/*"
         env:
           SFTP_PASSWORD: ${{ secrets.SFTP_PASSWORD }}
 
