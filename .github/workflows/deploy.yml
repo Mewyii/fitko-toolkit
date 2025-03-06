@@ -3,7 +3,7 @@ name: 🚀 Deploy Angular to IONOS (SFTP)
 on:
   push:
     branches:
-      - master # Passe dies an, falls du einen anderen Branch deployen willst
+      - master
 
 jobs:
   build-and-deploy:
@@ -20,7 +20,7 @@ jobs:
           node-version: 18
 
       - name: 📦 Install Dependencies
-        run: npm ci # Schneller als npm install
+        run: npm ci
 
       - name: 🔧 Build Angular App
         run: npm run build -- --configuration=production
@@ -32,7 +32,7 @@ jobs:
           username: ${{ secrets.SFTP_USERNAME }}
           password: ${{ secrets.SFTP_PASSWORD }}
           script: |
-            rm -rf /fitko-toolkit/*  # ⚠️ Löscht alles im Zielverzeichnis, falls nötig
+            rm -rf /htdocs/fitko-toolkit/*
 
       - name: 📤 Deploy via SFTP
         uses: appleboy/scp-action@master
@@ -42,4 +42,4 @@ jobs:
           username: ${{ secrets.SFTP_USERNAME }}
           password: ${{ secrets.SFTP_PASSWORD }}
           source: "dist/fitko-toolkit/*"
-          target: "/fitko-toolkit/"
+          target: "/htdocs/fitko-toolkit/"
