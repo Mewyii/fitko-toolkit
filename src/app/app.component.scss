@@ -1,0 +1,33 @@
+.header {
+  padding: 16px 32px 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #ffc819;
+  border-bottom: 1px solid #ffc819;
+  box-shadow: 0 0.2rem 1.5rem 0 rgba(0, 0, 0, 0.15);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background-color: var(--mat-sys-background);
+  width: 100%;
+  height: 64px;
+}
+
+.page-title {
+  font-size: xx-large;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+}
+
+.page-title,
+.user-profile {
+  min-width: 250px;
+}
+
+.nav-bar {
+  display: flex;
+  gap: 2rem;
+}

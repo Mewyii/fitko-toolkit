@@ -1,1 +1,213 @@
-/* You can add global styles to this file, and also import other style files */
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use "@angular/material" as mat;
+
+/* Light Theme */
+:root,
+:host {
+  @include mat.theme-overrides(
+    (
+      primary: #b91b23,
+      on-primary: #ffffff,
+      primary-container: #ffdad7,
+      on-primary-container: #410004,
+      inverse-primary: #ffb3ad,
+      primary-fixed: #ffdad7,
+      primary-fixed-dim: #ffb3ad,
+      on-primary-fixed: #410004,
+      on-primary-fixed-variant: #930012,
+      secondary: #765b00,
+      on-secondary: #ffffff,
+      secondary-container: #ffdf94,
+      on-secondary-container: #251a00,
+      secondary-fixed: #ffdf94,
+      secondary-fixed-dim: #f5bf05,
+      on-secondary-fixed: #251a00,
+      on-secondary-fixed-variant: #594400,
+      tertiary: #5e5e5e,
+      on-tertiary: #ffffff,
+      tertiary-container: #e2e2e2,
+      on-tertiary-container: #1b1b1b,
+      tertiary-fixed: #e2e2e2,
+      tertiary-fixed-dim: #c6c6c6,
+      on-tertiary-fixed: #1b1b1b,
+      on-tertiary-fixed-variant: #474747,
+      background: #fff8f7,
+      on-background: #1d1b1b,
+      surface: #fff8f7,
+      surface-dim: #dfd9d8,
+      surface-bright: #fff8f7,
+      surface-container-lowest: #ffffff,
+      surface-container-low: #f9f2f1,
+      surface-container: #f3eceb,
+      surface-container-high: #ede7e6,
+      surface-container-highest: #e8e1e0,
+      on-surface: #1d1b1b,
+      shadow: #000000,
+      scrim: #000000,
+      surface-tint: #6f5958,
+      inverse-surface: #33302f,
+      inverse-on-surface: #f6efee,
+      outline: #817473,
+      outline-variant: #d3c3c1,
+      neutral: #7a7675,
+      neutral10: #1d1b1b,
+      error: #ba1a1a,
+      error-container: #ffdad6,
+      on-error: #ffffff,
+      on-error-container: #410002,
+      surface-variant: #f0dfdd,
+      on-surface-variant: #504443,
+      neutral-variant: #827473,
+      neutral-variant20: #382e2d,
+      inverse-secondary: #f5bf05,
+      inverse-tertiary: #c6c6c6,
+    )
+  );
+}
+
+/* Dark Theme */
+.dark {
+  @include mat.theme-overrides(
+    (
+      primary: #ffb3ad,
+      on-primary: #680009,
+      primary-container: #930012,
+      on-primary-container: #ffdad7,
+      inverse-primary: #b91b23,
+      primary-fixed: #ffdad7,
+      primary-fixed-dim: #ffb3ad,
+      on-primary-fixed: #410004,
+      on-primary-fixed-variant: #930012,
+      secondary: #f5bf05,
+      on-secondary: #3e2e00,
+      secondary-container: #594400,
+      on-secondary-container: #ffdf94,
+      secondary-fixed: #ffdf94,
+      secondary-fixed-dim: #f5bf05,
+      on-secondary-fixed: #251a00,
+      on-secondary-fixed-variant: #594400,
+      tertiary: #c6c6c6,
+      on-tertiary: #303030,
+      tertiary-container: #474747,
+      on-tertiary-container: #e2e2e2,
+      tertiary-fixed: #e2e2e2,
+      tertiary-fixed-dim: #c6c6c6,
+      on-tertiary-fixed: #1b1b1b,
+      on-tertiary-fixed-variant: #474747,
+      background: #151313,
+      on-background: #e8e1e0,
+      surface: #151313,
+      surface-dim: #151313,
+      surface-bright: #3b3838,
+      surface-container-lowest: #100e0d,
+      surface-container-low: #1d1b1b,
+      surface-container: #211f1f,
+      surface-container-high: #2c2929,
+      surface-container-highest: #373434,
+      on-surface: #e8e1e0,
+      shadow: #000000,
+      scrim: #000000,
+      surface-tint: #dcc0be,
+      inverse-surface: #e8e1e0,
+      inverse-on-surface: #33302f,
+      outline: #9b8e8c,
+      outline-variant: #504443,
+      neutral: #7a7675,
+      neutral10: #1d1b1b,
+      error: #ffb4ab,
+      error-container: #93000a,
+      on-error: #690005,
+      on-error-container: #ffdad6,
+      surface-variant: #504443,
+      on-surface-variant: #d3c3c1,
+      neutral-variant: #827473,
+      neutral-variant20: #382e2d,
+      inverse-secondary: #765b00,
+      inverse-tertiary: #5e5e5e,
+    )
+  );
+}
+
+html {
+  @include mat.theme(
+    (
+      color: (
+        theme-type: light,
+        primary: mat.$azure-palette,
+        tertiary: mat.$blue-palette,
+      ),
+      typography: Roboto,
+      density: 0,
+    )
+  );
+} /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: var(--mat-sys-background);
+
+  --color-primary: #ffc819;
+  --color-secondary: #bf2026;
+  --color-black: #000;
+}
+
+body {
+  background: url(/images/fitko.jpg) 0% 0% / auto repeat;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+}
+
+body.dark {
+  --color-primary: #ffc819;
+  --color-secondary: #bf2026;
+  --color-black: #6b6b6b;
+}
+
+.color-yellow {
+  color: var(--color-primary);
+}
+
+.color-red {
+  color: var(--color-secondary);
+}
+
+.color-black {
+  color: var(--color-black);
+}
+
+.page-container {
+  width: 90vw;
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 128px;
+  padding: 16px;
+  background-color: var(--mat-sys-background);
+  height: calc(100vh - 192px);
+  border-radius: 5px;
+  box-shadow: 0 0.2rem 1.5rem 0 rgba(0, 0, 0, 0.15);
+}
+
+.content-container {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.control-bar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex: 1 1;
+}
+
+.formfield-full-width {
+  width: 100%;
+}

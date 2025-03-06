@@ -1,0 +1,29 @@
+<div class="content-container">
+  <mat-checkbox labelPosition="before" [(ngModel)]="usesPersonalDate"
+    >Werden personenbezogene Daten abgefragt?</mat-checkbox
+  >
+  <br /><br />
+  @if (usesPersonalDate) {
+  <mat-form-field class="formfield-full-width">
+    <mat-label>Wofür ist diese Datenschutzerklärung?</mat-label>
+    <textarea
+      matInput
+      placeholder="Bitte eingeben..."
+      [(ngModel)]="reason"
+    ></textarea>
+  </mat-form-field>
+  <br /><br />
+  <mat-form-field class="formfield-full-width">
+    <mat-label>Was ist das Ziel deiner Umfrage?</mat-label>
+    <textarea
+      matInput
+      placeholder="Bitte eingeben..."
+      [(ngModel)]="target"
+    ></textarea>
+  </mat-form-field>
+  <br /><br />
+  }
+  <div class="control-bar">
+    <button mat-flat-button (click)="generateDoc()">Generieren</button>
+  </div>
+</div>
