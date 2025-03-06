@@ -41,3 +41,13 @@ jobs:
           port: 22
           source: "dist/fitko-toolkit/*"
           target: "/kunden/homepages/35/d992320858/htdocs/fitko-toolkit"
+
+      - name: Move files from browser folder to fitko-toolkit
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SFTP_HOST }}
+          username: ${{ secrets.SFTP_USERNAME }}
+          password: ${{ secrets.SFTP_PASSWORD }}
+          script: |
+            mv /fitko-toolkit/dist/fitko-toolkit/browser/* /fitko-toolkit/
+            rmdir /fitko-toolkit/dist
