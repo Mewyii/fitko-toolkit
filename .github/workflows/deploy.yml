@@ -31,11 +31,11 @@ jobs:
           password: ${{ secrets.SFTP_PASSWORD }}
           script: |
             echo "Testing SFTP credentials..."
-            ls -la
+            find / -name "fitko-toolkit"
 
-      - name: List directories with real paths
+      - name: Get the absolute path
         run: |
-          sshpass -p "${{ secrets.SFTP_PASSWORD }}" ssh -o StrictHostKeyChecking=no ${{ secrets.SFTP_USERNAME }}@${{ secrets.SFTP_HOST }} "realpath /fitko-toolkit/*"
+          sshpass -p "${{ secrets.SFTP_PASSWORD }}" ssh -o StrictHostKeyChecking=no ${{ secrets.SFTP_USERNAME }}@${{ secrets.SFTP_HOST }} "pwd"
         env:
           SFTP_PASSWORD: ${{ secrets.SFTP_PASSWORD }}
 
