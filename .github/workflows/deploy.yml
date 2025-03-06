@@ -32,8 +32,13 @@ jobs:
           username: ${{ secrets.SFTP_USERNAME }}
           password: ${{ secrets.SFTP_PASSWORD }}
           script: |
-            echo "Checking contents of /htdocs/fitko-toolkit/"
-            ls -la /htdocs/fitko-toolkit/
+            echo "Checking if /htdocs/fitko-toolkit/ exists"
+            if [ ! -d "/htdocs/fitko-toolkit" ]; then
+              echo "/htdocs/fitko-toolkit/ doesn't exist, creating it."
+              mkdir -p /htdocs/fitko-toolkit/
+            else
+              echo "/htdocs/fitko-toolkit/ already exists."
+            fi
             echo "Removing all files in /htdocs/fitko-toolkit/"
             rm -rf /htdocs/fitko-toolkit/*
             echo "Finished removing files"
