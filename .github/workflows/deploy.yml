@@ -35,10 +35,11 @@ jobs:
             rm -rf /htdocs/fitko-toolkit/*
 
       - name: 📤 Deploy via SFTP
-        uses: SamKirkland/FTP-Deploy-Action@v4
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.SFTP_HOST }}
           username: ${{ secrets.SFTP_USERNAME }}
           password: ${{ secrets.SFTP_PASSWORD }}
           local-dir: "dist/fitko-toolkit/*"
           server-dir: "/htdocs/fitko-toolkit/"
+          protocol: ftps
