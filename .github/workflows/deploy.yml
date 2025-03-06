@@ -3,7 +3,7 @@ name: 🚀 Deploy Angular to IONOS (SFTP)
 on:
   push:
     branches:
-      - main # Passe dies an, falls du einen anderen Branch deployen willst
+      - master # Passe dies an, falls du einen anderen Branch deployen willst
 
 jobs:
   build-and-deploy:
