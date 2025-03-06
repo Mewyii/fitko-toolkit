@@ -31,7 +31,8 @@ jobs:
           password: ${{ secrets.SFTP_PASSWORD }}
           script: |
             echo "Testing SFTP credentials..."
-            ls -la
+            ls -la /fitko-toolkit
+            ls -la /htdocs/fitko-toolkit
 
       - name: 🗑️ Clean old files on server
         uses: appleboy/ssh-action@master
