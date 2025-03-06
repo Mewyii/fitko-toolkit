@@ -33,7 +33,7 @@ jobs:
           password: ${{ secrets.SFTP_PASSWORD }}
           script: |
             echo "Testing SFTP credentials..."
-            ls -la /htdocs
+            ls -la
 
       - name: 🗑️ Clean old files on server
         uses: appleboy/ssh-action@master
