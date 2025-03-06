@@ -43,3 +43,4 @@ jobs:
           password: ${{ secrets.SFTP_PASSWORD }}
           source: "dist/fitko-toolkit/*"
           target: "/htdocs/fitko-toolkit/"
+          debug: true
