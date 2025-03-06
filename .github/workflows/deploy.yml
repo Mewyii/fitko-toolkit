@@ -40,6 +40,6 @@ jobs:
           server: ${{ secrets.SFTP_HOST }}
           username: ${{ secrets.SFTP_USERNAME }}
           password: ${{ secrets.SFTP_PASSWORD }}
-          local-dir: "dist/fitko-toolkit/*"
+          local-dir: "dist/fitko-toolkit/"
           server-dir: "/htdocs/fitko-toolkit/"
           protocol: ftps
