@@ -31,8 +31,13 @@ jobs:
           password: ${{ secrets.SFTP_PASSWORD }}
           script: |
             echo "Testing SFTP credentials..."
-            ls -la /fitko-toolkit
-            ls -la /htdocs/fitko-toolkit
+            ls -la
+
+      - name: List directories with real paths
+        run: |
+          sshpass -p "${{ secrets.SFTP_PASSWORD }}" ssh -o StrictHostKeyChecking=no ${{ secrets.SFTP_USERNAME }}@${{ secrets.SFTP_HOST }} "realpath /path/to/directory/*"
+        env:
+          SFTP_PASSWORD: ${{ secrets.SFTP_PASSWORD }}
 
       - name: 🗑️ Clean old files on server
         uses: appleboy/ssh-action@master
