@@ -32,15 +32,15 @@ jobs:
           username: ${{ secrets.SFTP_USERNAME }}
           password: ${{ secrets.SFTP_PASSWORD }}
           script: |
-            echo "Checking if /htdocs/fitko-toolkit/ exists"
-            if [ ! -d "/htdocs/fitko-toolkit" ]; then
-              echo "/htdocs/fitko-toolkit/ doesn't exist, creating it."
-              mkdir -p /htdocs/fitko-toolkit/
+            echo "Checking if /fitko-toolkit/ exists"
+            if [ ! -d "/fitko-toolkit" ]; then
+              echo "/fitko-toolkit/ doesn't exist, creating it."
+              mkdir -p /fitko-toolkit/
             else
-              echo "/htdocs/fitko-toolkit/ already exists."
+              echo "/fitko-toolkit/ already exists."
             fi
-            echo "Removing all files in /htdocs/fitko-toolkit/"
-            rm -rf /htdocs/fitko-toolkit/*
+            echo "Removing all files in /fitko-toolkit/"
+            rm -rf /fitko-toolkit/*
             echo "Finished removing files"
 
       - name: 📤 Deploy via SFTP
@@ -51,5 +51,5 @@ jobs:
           password: ${{ secrets.SFTP_PASSWORD }}
           port: 22
           source: "dist/fitko-toolkit/*"
-          target: "/htdocs/fitko-toolkit/"
+          target: "/fitko-toolkit/"
           debug: true
