@@ -49,4 +49,5 @@ jobs:
           username: ${{ secrets.SFTP_USERNAME }}
           password: ${{ secrets.SFTP_PASSWORD }}
           script: |
-            mv /kunden/homepages/35/d992320858/htdocs/fitko-toolkit/dist/fitko-toolkit/browser/* /kunden/homepages/35/d992320858/htdocs/fitko-toolkit/
+            rsync -av --remove-source-files /kunden/homepages/35/d992320858/htdocs/fitko-toolkit/dist/fitko-toolkit/browser/ /kunden/homepages/35/d992320858/htdocs/fitko-toolkit/
+            rm -r /kunden/homepages/35/d992320858/htdocs/fitko-toolkit/dist/
