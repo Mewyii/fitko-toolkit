@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
 import { Document, ExternalHyperlink, Packer, Paragraph, TextRun } from 'docx';
 import { saveAs } from 'file-saver';
 
